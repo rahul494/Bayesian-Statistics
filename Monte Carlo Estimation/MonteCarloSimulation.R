@@ -5,6 +5,10 @@
 ## Author: Rahul Sharma
 #######################################################################
 
+#######################################################################
+# Normal Distribution
+#######################################################################
+
 set.seed(1)
 
 n = 1e6
@@ -23,12 +27,28 @@ mean
 var(theta)
 sd^2
 
-shape = 2
-rate = 1/3
+#######################################################################
+# Gamma Distribution
+#######################################################################
 
-theta = rgamma(n, shape, rate)
+a = 2
+b = 1/3
+
+theta = rgamma(n, a, b)
 hist(theta, prob=TRUE, main = "Gamma Distribution")
-curve(dgamma(x, shape, rate), col="red", add=TRUE)
+curve(dgamma(x, a, b), col="red", add=TRUE)
+
+# comparing sample mean with the true expected mean defined as E[X] = a/b
+mean(theta)
+a/b
+
+# comparing sample variance with the true expected variance defined as var[X] = a/b^2
+var(theta)
+a/b^2
+
+#######################################################################
+# Beta Distribution
+#######################################################################
 
 a = 5
 b = 3
@@ -37,7 +57,11 @@ theta = rbeta(n, a, b)
 hist(theta, prob=TRUE, main = "Beta Distribution")
 curve(dbeta(x, a, b), col="red", add=TRUE)
 
-# comparing sample mean with true expected value
-# formula for mean beta distribution = a/(a+b)
+# comparing sample mean with the true expected mean defined as E[X] = a/(a+b)
 mean(theta)
 a/(a + b)
+
+# comparing sample variance with the true expected variance defined as var[X] = a*b/((a+b)^2*(a+b+1))
+var(theta)
+a*b/((a+b)^2*(a+b+1))
+

@@ -1,1 +1,3 @@
-# WIP
+# Script purpose:
+# 
+# 

@@ -10,11 +10,12 @@
 
 c = c(0.02, 0.98)
 
-
 Q = matrix(c(0.6, 0.4,
              0.15, 0.85), 
            nrow=2, byrow=TRUE)
 
+# Probability after 12 months
 c %*% Q
 
+# Probability after 24 months
 c %*% Q %*% Q

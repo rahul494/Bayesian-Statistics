@@ -19,3 +19,10 @@ c %*% Q
 
 # Probability after 24 months
 c %*% Q %*% Q
+
+# let n represent the number of years into the future we want to predict
+for(i in 1:n){
+    c <- c %*% Q
+}
+
+c

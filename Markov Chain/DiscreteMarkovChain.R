@@ -21,8 +21,9 @@ c %*% Q
 c %*% Q %*% Q
 
 # let n represent the number of years into the future we want to predict
+# in our case, we are interested ahead 5 years into the future
+n <- 5
 for(i in 1:n){
     c <- c %*% Q
 }
-
 c
